@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div img {
+    width: 60%;
+}
+
+.container {
+    position: relative;
+    margin: auto;
+}
+
+.img-container {
+    text-align: center;
+    display: none;
+    padding: 50px;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+.img-container1 {
+    text-align: center;
+    padding: 50px;
+    padding-bottom: 0px;
+    position: relative;
+}
+
+.left {
+    font-size: 35px;
+    right: 75%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: auto;
+    padding: 10px;
+    top: 40%;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    transition: 0.8s;
+}
+
+.left:hover {
+    background-color: black;
+}
+
+.right {
+    font-size: 35px;
+    left: 75%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: auto;
+    padding: 10px;
+    top: 40%;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    transition: 0.8s;
+}
+
+.right:hover {
+    background-color: black;
+}
+
+.play {
+    display: flex;
+    justify-content: center;
+}
+
+#svg-container {
+    text-align: center;
+}
+
+
+/* #svg-s {
+    width: 8%;
+    margin: auto;
+    text-align: center;
+} */
+
+svg {
+    margin: 0 5px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    fill: yellowgreen;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.dot:hover {
+    background-color: yellowgreen;
+    border: 1px solid white;
+}
+
+.clicked {
+    background-color: yellowgreen;
+    /* border: 1px solid black; */
+}
+
+.dot-container {
+    padding-bottom: 20px;
+    padding-top: 15px;
+    margin: auto;
+    width: 10%;
+    text-align: center;
+}
