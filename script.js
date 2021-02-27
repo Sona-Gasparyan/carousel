@@ -1,49 +1,50 @@
-let index = 0;
-slider(index);
-var carousel;
+    let index = 1;
+    slider(index);
+    let pause = document.getElementById("svg-container")
+    play = document.getElementById("svg-s")
 
-function plusSlides(n) {
-    slider(index += n)
-}
+    let timer = setInterval(function() {
+        plusSlides(1);
+    }, 2000);
 
 
-function currentSlide(n) {
-    slider(index = n);
-}
-
-function slider(n) {
-    let img = document.getElementsByClassName("img-container");
-    let dots = document.getElementsByClassName("dot");
-    if (n > img.length) {
-        index = 1;
-    }
-    if (n < 1) {
-        index = img.length;
-    }
-    for (let i = 0; i < img.length; i++) {
-        img[i].style.display = "none";
+    function plusSlides(n) {
+        slider(index += n)
     }
 
-    index++
-    if (index > img.length) {
-        index = 1
+    function currentSlide(n) {
+        slider(index = n);
     }
-    for (let i = 0; i < dots.length; i++) {
-        // dots[i].classList.replace("dot", "clicked")
-        dots[i].className = dots[i].className.replace(" clicked", "");
 
+    function slider(n) {
+        let img = document.getElementsByClassName("img-container");
+        let dots = document.getElementsByClassName("dot");
+        if (n > img.length) {
+            index = 1;
+        }
+        if (n < 1) {
+            index = img.length;
+        }
+        for (let i = 0; i < img.length; i++) {
+            img[i].style.display = "none";
+        }
+
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" clicked", "");
+        }
+        img[index - 1].style.display = "block";
+
+        dots[index - 1].className += " clicked";
     }
-    img[index - 1].style.display = "block";
 
-    dots[index - 1].className += " clicked";
-    carousel = setTimeout(slider, 2000);
-}
+    function clear() {
+        clearInterval(timer)
+    }
 
 
-document.getElementById("svg-container").addEventListener("click", function() {
-    clearTimeout(carousel);
-
-})
-document.getElementById("svg-s").addEventListener("click", function() {
-    setTimeout(slider, 2000);
-})
+    pause.addEventListener("click", clear)
+    play.addEventListener("click", function() {
+        setInterval(function() {
+            plusSlides(1)
+        }, 2000)
+    });
