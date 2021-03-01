@@ -44,7 +44,7 @@
 
     pause.addEventListener("click", clear)
     play.addEventListener("click", function() {
-        setInterval(function() {
+        timer = setInterval(function() {
             plusSlides(1)
         }, 2000)
     });
